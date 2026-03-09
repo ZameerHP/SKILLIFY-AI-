@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-primary: #2563FF;
+  --color-accent: #00E5FF;
+  --color-secondary: #7C3AED;
+  --color-navy-900: #0B1120;
+  --color-navy-800: #111827;
+  --color-navy-700: #1E293B;
+}
+
+@layer base {
+  body {
+    @apply bg-navy-900 text-white font-sans antialiased selection:bg-accent/30;
+    background: radial-gradient(circle at 50% -20%, #1e293b 0%, #0b1120 100%);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  }
+
+  .bg-glow {
+    background: radial-gradient(circle at center, #00E5FF 0%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0.15;
+  }
+}
